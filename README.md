@@ -1,1 +1,1 @@
-# Bot3
+bütün kodlar
