@@ -1,0 +1,15 @@
+from dotenv import load_dotenv
+import os
+
+# .env dosyasını yükle
+load_dotenv("/kaggle/working/.env")
+
+# API Anahtarlarını Kullanma
+api_key = os.getenv("BINANCE_API_KEY")
+api_secret = os.getenv("BINANCE_API_SECRET")
+telegram_token = os.getenv("TELEGRAM_BOT_TOKEN")
+
+# Değerleri kontrol et
+print("Binance API Key:", api_key)
+print("Binance API Secret:", api_secret)
+print("Telegram Bot Token:", telegram_token)
