@@ -1,0 +1,16 @@
+from binance.client import Client
+
+# Binance Futures Testnet API Anahtarları
+API_KEY = "70545197030f91dcd85316478ef03e15fdf565514a0bfcd6afe915dc93b0c69b"
+API_SECRET = "8c403fbf9b9bdd003bc38a7162f89b96f8f97a3df48244a542685023dc9b2033"
+
+# Binance Testnet Client Bağlantısı
+client = Client(API_KEY, API_SECRET, testnet=True)
+
+# Hesap bilgilerini alarak bağlantıyı test et
+try:
+    account_info = client.futures_account()
+    print("✅ API bağlantısı başarılı! Hesap bilgileri alındı.")
+    print("Bakiye Bilgileri:", account_info["totalWalletBalance"])
+except Exception as e:
+    print("❌ API bağlantısı başarısız!", str(e))
