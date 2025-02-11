@@ -1,0 +1,2 @@
+import binance
+print("Binance kütüphanesi başarıyla yüklendi!")
