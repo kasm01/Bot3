@@ -1,0 +1,17 @@
+from binance.client import Client
+
+# Binance API Anahtarları
+API_KEY = "70545197030f91dcd85316478ef03e15fdf565514a0bfcd6afe915dc93b0c69b"
+API_SECRET = "8c403fbf9b9bdd003bc38a7162f89b96f8f97a3df48244a542685023dc9b2033"
+
+# Binance Client Tanımlaması
+client = Client(API_KEY, API_SECRET, testnet=True)  # Testnet için True
+
+# Pozisyon modunu kontrol et
+info = client.futures_get_position_mode()
+is_dual_side_position = info['dualSidePosition']
+
+if is_dual_side_position:
+    print("Hedge Mode aktif (Çift yönlü işlem)")
+else:
+    print("Tek yönlü işlem modu aktif (One-Way Mode)")
