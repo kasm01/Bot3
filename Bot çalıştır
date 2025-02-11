@@ -1,0 +1,18 @@
+from binance.client import Client
+
+# TESTNET API Anahtarlarınızı buraya girin
+API_KEY = "70545197030f91dcd85316478ef03e15fdf565514a0bfcd6afe915dc93b0c69b"
+API_SECRET = "8c403fbf9b9bdd003bc38a7162f89b96f8f97a3df48244a542685023dc9b2033"
+
+# Binance Futures Testnet URL'si
+TESTNET_URL = "https://testnet.binancefuture.com"
+
+# Binance Client Tanımlaması (Testnet için)
+client = Client(API_KEY, API_SECRET, testnet=True)
+
+# API endpoint'ini testnet'e yönlendir
+client.FUTURES_URL = TESTNET_URL
+
+# Hesap bilgilerini çekerek bağlantıyı test et
+account_info = client.futures_account()
+print("Bağlantı başarılı! Hesap bilgileri:", account_info)
