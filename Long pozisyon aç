@@ -1,0 +1,9 @@
+order = client.futures_create_order(
+    symbol="BTCUSDT",
+    type="MARKET",
+    side="BUY",
+    positionSide="LONG",  # Hedge mode için gerekli
+    quantity=0.01
+)
+
+print("Long pozisyon açıldı:", order)
